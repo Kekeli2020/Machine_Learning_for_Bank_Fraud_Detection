@@ -1,0 +1,19 @@
+﻿# ignore everything in data except the sample
+/data/*
+!/data/sample_base.csv
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# notebooks and outputs
+.ipynb_checkpoints/
+models/
+*.pkl
+*.joblib
+
+# large compressed files
+*.parquet
+*.csv.gz
