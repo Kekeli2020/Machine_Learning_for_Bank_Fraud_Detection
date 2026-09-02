@@ -1,1 +1,6 @@
 cp .gitignore C:\Users\KEKELI\OneDrive\Desktop\PythonProg\.gitignore
+cd C:\Users\KEKELI\OneDrive\Desktop\PythonProg
+git rm --cached Base.csv
+git add .gitignore
+git commit -m "Add .gitignore to exclude large CSV files"
+git push -u origin main
