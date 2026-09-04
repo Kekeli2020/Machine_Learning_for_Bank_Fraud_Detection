@@ -92,29 +92,6 @@ KNN's prediction cost scales with training set size. Oversampling (SMOTE) would 
 ### Why preprocessing is shared?
 Imputation, scaling, and one-hot encoding are identical regardless of model. Fitting once per fold and reusing saves 3x redundant computation.
 
-### Why no feature importance?
-On a GitHub-hosted project, feature importance plots can bloat the repo. Add them locally if needed:
-```python
-# Example: RF feature importance
-import matplotlib.pyplot as plt
-importances = rf.feature_importances_
-top_idx = np.argsort(importances)[-10:]
-plt.barh(range(10), importances[top_idx])
-plt.show()
-```
-
-## GitHub: Large File Handling
-
-If you ever need the full `Base.csv` in the repo:
-1. Install [Git LFS](https://git-lfs.github.com)
-2. Track it:
-   ```bash
-   git lfs track "*.csv"
-   ```
-3. Commit `.gitattributes` and retry the push
-
-For now, using `.gitignore` keeps the repo lean and focused on code.
-
 ## Author
 Kekeli Tsoekewo  
 Date: 09/02/2026
