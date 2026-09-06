@@ -47,9 +47,9 @@ SAMPLE_FRAC = 0.2
 MIN_ROWS_FOR_SAMPLING = 2000
 N_SPLITS, N_REPEATS = 5, 1
 
-# ===================================================================
+
 # Load data (single, clear block; sample preferred)
-# ===================================================================
+
 def load_dataset():
     if SAMPLE_PATH.exists():
         df = pd.read_csv(SAMPLE_PATH)
@@ -75,9 +75,9 @@ present_sentinels = [c for c in SENTINEL_COLS if c in df.columns]
 if present_sentinels:
     df.loc[:, present_sentinels] = df.loc[:, present_sentinels].replace(-1, np.nan)
 
-# ===========================================================================
+
 # EDA — testing the hypotheses behind the model
-# ===========================================================================
+
 
 # 1. Class balance
 # Fraud is rare. This shapes everything downstream: accuracy is a bad metric,
@@ -192,9 +192,9 @@ if 'velocity_24h' in df.columns:
     plt.tight_layout()
     plt.show()
 
-# ===================================================================
+
 # Modeling — using these signals to predict fraud.
-# ===================================================================
+
 
 # Run mode: trade off speed vs. thoroughness.
 # The three fixes below are what actually cut runtime (the old ~1hr version):
